@@ -59,7 +59,7 @@ Recognizing the significance of mathematical content in academic works, we're lo
 To ensure a responsive and modern design experience, [SCSS](https://sass-lang.com/) is on our radar. This advanced CSS preprocessor, with its suite of features like variables and mixins, offers the flexibility and precision we aim for in Fern's visual language.
 
 ## Get Involved
-[Initial prototype][../sample-article/]
+[Initial prototype](../sample-article/)
 
 Explore our initial efforts here. It's a starting point and there's a lot to refine and develop.
 
