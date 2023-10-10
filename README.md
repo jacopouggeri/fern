@@ -27,13 +27,27 @@ Taking full advantage of digital capabilities means more than just responsive de
 ### The Simplicity and Versatility of Markdown
 Markdown stands out with its lightweight nature and easy-to-understand syntax, making it exceptionally user-friendly. Its simplicity doesn't mean a lack of power. With Markdown, not only can you create well-structured documents effortlessly, but you can also integrate LaTeX for mathematical expressions, marrying the best of both worlds. This blend caters to both novices looking for ease of use and professionals seeking advanced formatting, making it an ideal choice for a wide range of academic content creation.
 
+### Proposed Tools for Fern
+
+In our journey to reshape digital academic publishing with Fern, we're exploring the integration of several leading-edge tools that align with our mission and values:
+Hugo
+
+#### Hugo
+[Hugo](https://gohugo.io/) is a robust static site generator, known for its speed and efficiency. It provides a solid foundation for content management and rapid site deployment, aligning with our vision for swift and seamless academic publishing.
+
+#### MathJax
+Recognizing the significance of mathematical content in academic works, we're looking at the integration of [MathJax](https://www.mathjax.org/). MathJax offers impeccable rendering of mathematical notations, bridging the gap between LaTeX's rigorous standards and the adaptability of the web.
+
+#### SCSS
+To ensure a responsive and modern design experience, [SCSS](https://sass-lang.com/) is on our radar. This advanced CSS preprocessor, with its suite of features like variables and mixins, offers the flexibility and precision we aim for in Fern's visual language.
+
 ## Get Involved
-Initial Prototype
+[Initial prototype][../sample-article/]
 
 Explore our initial efforts here. It's a starting point and there's a lot to refine and develop.
 
 ### Community & Discussion
-Fern isn't just a tool; it's a movement. A push towards redefining how we approach academic publishing in the digital age. Your voice, insights, and expertise are invaluable to this journey. Engage in conversations on our GitHub Discussions.
+Fern isn't meant to be just a tool, but a movement. A push towards redefining how we approach academic publishing in the digital age. Your voice, insights, and expertise are invaluable to this journey. Engage in conversations on our GitHub Discussions.
 
 ### Contribution
 The strength of Fern lies in collective collaboration. Whether it's feedback, code, or new ideas, every contribution counts. See our Contribution Guidelines for more.
