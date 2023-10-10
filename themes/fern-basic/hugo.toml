@@ -1,0 +1,3 @@
+# Theme config.
+[markup.goldmark.renderer]
+    unsafe = true

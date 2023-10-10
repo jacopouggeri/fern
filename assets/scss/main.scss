@@ -1,0 +1,173 @@
+@import url('https://fonts.cdnfonts.com/css/opendyslexic');
+
+$font-stack: Arial, sans-serif;
+$primary-color: #197278;
+$text-color: #12222e;
+$accent-color: #3ea39e;
+$background-color: #ffffff;
+
+
+body {
+    font-family: $font-stack;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    color: $text-color;
+    background-color: $background-color;
+    transition: 0.2s ease-in-out;
+    -webkit-transition: 0.2s ease-in-out;
+    -moz-transition: 0.2s ease-in-out;
+
+    &.dark-mode {
+        // Overwrite your default light theme with the dark theme colors
+        $primary-color: #88c8c1;
+        $text-color: #e0e0e0;
+        $accent-color: #197278;
+        $background-color: #12222e;
+    
+        background-color: $background-color;
+        color: $text-color;
+    }
+
+    &.dyslexia-mode {
+        font-family: 'OpenDyslexic', $font-stack;
+    }
+
+}
+
+li {
+    margin-bottom: 0.5em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: $primary-color;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+a {
+    color: $primary-color;
+    text-decoration: none;
+    transition: 0.2s ease-in-out;
+    -webkit-transition: 0.2s ease-in-out;
+    -moz-transition: 0.2s ease-in-out;
+
+    &:hover {
+        text-decoration: underline;
+        color: $accent-color;
+    }
+}
+
+.article-content {
+    width: 55%;      // Taking up 80% of the viewport width
+    max-width: 1200px;  // Prevents the content from becoming too wide on large screens
+    margin-left: auto;  // Centers the content horizontally
+    margin-right: auto;
+    padding: 6.6rem;   // Adding some padding so content isn't flush against the colored background
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.7);
+
+    .abstract {
+        font-style: italic;
+        color: $primary-color;
+        margin-bottom: 1rem;
+    }
+
+    .keywords span{
+
+        &:not(:last-child)::after {
+            content: ' | ';
+        }
+    }
+
+    .authors {
+        .author {
+            font-weight: bold;
+
+            &:not(:nth-last-child(2))::after {
+                content: ' | ';
+            }
+        }
+
+        .author-details {
+            margin-top: 10px; // space between authors and details
+            opacity: 0;
+            max-height: 0; // Used instead of display: none
+            transition: opacity 0.2s ease-in, max-height 0.2s ease-in-out;
+
+            &.show {
+                opacity: 1;
+                max-height: 10rem;
+            }
+        }
+    }
+
+    .content {
+        -webkit-column-count: 1;
+        -moz-column-count: 1;
+        column-count: 1;
+        -webkit-column-gap: 20px;
+        -moz-column-gap: 20px;
+        column-gap: 20px;
+
+        transition: column-count 1s ease-in-out;
+        -webkit-transition: column-count 1s ease-in-out;
+        -moz-transition: column-count 1s ease-in-out;
+
+        &.two-columns {
+            -webkit-column-count: 2;
+            -moz-column-count: 2;
+            column-count: 2;
+        }
+    }
+
+}
+
+$primary-color: #197278;
+$text-color: #12222e;
+$accent-color: #3ea39e;
+$background-color: #ffffff;
+
+.buttons {
+    position: fixed;
+    left: 3%;      // Distance from the left of the window
+    top: 5%;       // Distance from the top
+    z-index: 1000; // Ensure buttons are on top
+    width: 10%;
+
+    button {
+        width: 100%;
+        height: 3rem;
+        padding: 0.5rem;
+        font-size: 16px;
+        margin-bottom: 10px;   // Gap between buttons
+        border: none;
+        border-radius: 5px;    // Rounded edges
+        background-color: $primary-color;
+        color: $background-color;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.1s, box-shadow 0.2s;
+        outline: none;         // Remove browser default focus outline
+
+        &:hover {
+            background-color: $accent-color; // Change on hover
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); // Shadow for depth
+        }
+
+        &:active {
+            transform: scale(0.95);  // Shrink effect on press
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1); // Shadow effect on press
+        }
+    }
+}
+
+
+// Adjustments for smaller screens
+@media screen and (max-width: 768px) {
+    .article-content {
+        width: 100%;  // For smaller screens, content can take up full width
+        padding: 1.5rem;  // Slight padding for very small devices
+    }
+}

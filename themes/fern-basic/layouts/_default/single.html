@@ -1,0 +1,54 @@
+{{ define "main" }}
+<div class="buttons">
+    <button id="darkToggle">Dark Mode</button>
+    <button id="dysToggle">Dyslexic Font</button>
+    <button id="toggleColumns">Columns</button>
+</div>
+<div class="article-content">
+    <!-- Display Metadata from Markdown files -->
+    <h1>{{ .Title }}</h1>
+    <!-- ... Other metadata like authors, date, abstract ... -->
+    <div class="authors">
+        {{ range .Params.authors }}
+            <span class="author" 
+                    data-affiliation="{{ .affiliation }}" 
+                    data-email="{{ .email }}">
+                <a>{{ .name }}</a>
+            </span>
+        {{ end }}
+        <div class="author-details"></div><!-- This div will display hovered author details -->
+    </div>
+
+    <p>{{ .Date.Format "January 2, 2006" }}</p>
+
+    <div class="abstract">
+        <strong>Abstract:</strong> {{ .Params.abstract }}
+    </div>
+
+    <div class="keywords">
+        <strong>Keywords:</strong> 
+        {{ range .Params.keywords }}
+            <span>{{ . }}</span>
+        {{ end }}
+    </div>
+
+    <div class="content">
+        <!-- Loop through sections -->
+        {{ range (.Resources.Match "section-*.yaml") }}
+            {{ $data := . | transform.Unmarshal }}
+            <h2>{{ with $data.title }}{{ . }}{{ else }}No Title{{ end }}</h2>
+            <p>{{ with $data.content }}{{ . | markdownify }}{{ else }}No Content{{ end }}</p>
+        {{ end }}
+    </div>
+
+    <!-- Display figures -->
+    <h3>Figures</h3>
+    {{ range .Params.figures }}
+        <figure>
+            <img src="{{ .file }}">
+            <figcaption>{{ .caption }}</figcaption>
+        </figure>
+    {{ end }}
+
+</div>
+{{ end }}
