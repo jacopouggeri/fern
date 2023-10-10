@@ -1,4 +1,4 @@
-# Fern: Redefining Digital Academic Publishing
+# Fern: Redefining Digital Academic Articles
 
 As the digital landscape evolved, academic publishing remained, to a large extent, stagnant. Fern is our endeavor to change that.
 

@@ -1,0 +1,39 @@
+@media print {
+    @page {
+        background-color: $background-color;
+        size: A4;
+        margin: 0vw;
+    }
+
+    * {
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+    }
+
+    html, body {
+        margin: 0;
+        padding: 0;
+    }
+
+    header, footer, nav, .no-print {
+        display: none;
+    }
+
+    .paper {
+        margin: 0;
+        width: 210mm;
+        overflow: hidden;
+        -moz-box-shadow: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        page-break-after: always;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    footer {
+        display: none;
+    }
+}

@@ -61,7 +61,7 @@ a {
     }
 }
 
-.article-content {
+.paper {
     width: 55%;      // Taking up 80% of the viewport width
     max-width: 1200px;  // Prevents the content from becoming too wide on large screens
     margin-left: auto;  // Centers the content horizontally
@@ -107,6 +107,12 @@ a {
                 max-height: 10rem;
             }
         }
+        
+    }
+
+    .summary {
+        margin: 2rem;
+        font-size: 1.1rem;
     }
 
     .content {
@@ -129,11 +135,6 @@ a {
     }
 
 }
-
-$primary-color: #197278;
-$text-color: #12222e;
-$accent-color: #3ea39e;
-$background-color: #ffffff;
 
 .buttons {
     position: fixed;
@@ -170,8 +171,10 @@ $background-color: #ffffff;
 
 // Adjustments for smaller screens
 @media screen and (max-width: 768px) {
-    .article-content {
+    .paper {
         width: 100%;  // For smaller screens, content can take up full width
         padding: 1.5rem;  // Slight padding for very small devices
     }
 }
+
+@import "print";

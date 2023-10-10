@@ -1,10 +1,11 @@
 {{ define "main" }}
-<div class="buttons">
+<header class="buttons">
     <button id="darkToggle">Dark Mode</button>
     <button id="dysToggle">Dyslexic Font</button>
     <button id="toggleColumns">Columns</button>
-</div>
-<div class="article-content">
+    <button onclick="window.print()">Save as PDF</button>
+</header>
+<div class="paper">
     <!-- Display Metadata from Markdown files -->
     <h1>{{ .Title }}</h1>
     <!-- ... Other metadata like authors, date, abstract ... -->
@@ -36,7 +37,7 @@
         </div>
     {{end}}
     <hr>
-    
+
     <div class="content">
         <!-- Loop through sections -->
         {{ if eq .Params.content "yaml"}}

@@ -1,0 +1,18 @@
+{{ define "main" }}
+<div class="paper">
+    {{ range .Site.RegularPages }}
+        <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+        <p>{{ range .Params.authors }} {{ .name }} | {{ end }} {{ .Params.date.Format "January 2, 2006" }}</p>
+        <div class="summary">
+            {{ if .Params.summary }}
+                <p>{{ .Params.summary }}</p>
+            {{ else if .Params.abstract }}
+                <p>{{ .Params.abstract }}</p>
+            {{ else }}
+                <p>{{ .Summary }}</p>
+            {{ end }}
+        </div>
+    <hr>
+    {{ end }}
+</div>
+{{ end }}

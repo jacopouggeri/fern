@@ -1,12 +1,13 @@
 ---
 
-title: "Fern: Redefining Digital Academic Publishing"
+title: "Fern: Redefining Digital Academic Articles"
 authors:
   - name: "Jacopo Uggeri"
     affiliation: "Imperial College London, Department of Physics"
     email: "jacopo.uggeri@gmail.com"
 date: "2023-10-10"
 abstract:
+summary: Fern challenges the constraints of traditional academic publishing in a digital age. Moving beyond static formats like PDFs, it champions dynamic, responsive designs that adapt to various screens. Utilizing the simplicity of Markdown, Fern streamlines content creation, enhanced by integrations like LaTeX for complex expressions. The platform also embraces diverse media types, from videos to simulations, enriching academic narratives. With a strong emphasis on accessibility, from dyslexic-friendly fonts to versatile color palettes, Fern is reshaping academic content for the modern era, making it more inclusive, interactive, and impactful.
 keywords:
   - Publishing
   - Responsiveness

@@ -1,3 +1,11 @@
+function applyUserPreference(key, className, targetElement) {
+    const savedPreference = localStorage.getItem(key);
+    if (savedPreference) {
+        const element = targetElement || document.body;
+        element.classList.add(`${savedPreference}-mode`);
+    }
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     let authors = document.querySelectorAll('.author');
     let detailsDiv = document.querySelector('.author-details');
@@ -56,23 +64,20 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             localStorage.removeItem('column');
         }
-    });   
+    });
     
-    // Check user's preference on page load
-    if (localStorage.getItem('theme') === 'dark') {
-        document.body.classList.add('dark-mode');
-    }
+    // Apply styling preferences
+    applyUserPreference('theme', 'dark-mode');
+    applyUserPreference('font', 'dyslexia-mode');
+    applyUserPreference('column', 'two-columns', document.querySelector('.content'));
 
-    // Check user's preference on page load
-    if (localStorage.getItem('font') === 'dyslexia') {
-        document.body.classList.add('dyslexia-mode');
-    }
 
-    // Check user's preference on page load
-    if (localStorage.getItem('column') === 'double') {
-        const content = document.querySelector('.content');
-        content.classList.add('two-columns');
-    }
+    window.addEventListener('beforeprint', () => {
+        // Apply styling preferences on print
+        applyUserPreference('theme', 'dark-mode');
+        applyUserPreference('font', 'dyslexia-mode');
+        applyUserPreference('column', 'two-columns', document.querySelector('.content'));
+    });     
     
     
 });
