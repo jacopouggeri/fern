@@ -34,10 +34,14 @@
 
     <div class="content">
         <!-- Loop through sections -->
-        {{ range (.Resources.Match "section-*.yaml") }}
-            {{ $data := . | transform.Unmarshal }}
-            <h2>{{ with $data.title }}{{ . }}{{ else }}No Title{{ end }}</h2>
-            <p>{{ with $data.content }}{{ . | markdownify }}{{ else }}No Content{{ end }}</p>
+        {{ if eq .Params.content "yaml"}}
+            {{ range (.Resources.Match "section-*.yaml") }}
+                {{ $data := . | transform.Unmarshal }}
+                <h2>{{ with $data.title }}{{ . }}{{ else }}No Title{{ end }}</h2>
+                <p>{{ with $data.content }}{{ . | markdownify }}{{ else }}No Content{{ end }}</p>
+            {{ end }}
+        {{ else }}
+            {{ .Content }}
         {{ end }}
     </div>
 
