@@ -21,17 +21,22 @@
 
     <p>{{ .Date.Format "January 2, 2006" }}</p>
 
-    <div class="abstract">
-        <strong>Abstract:</strong> {{ .Params.abstract }}
-    </div>
+    {{ if .Params.abstract }}
+        <div class="abstract">
+            <strong>Abstract:</strong> {{ .Params.abstract }}
+        </div>
+    {{ end }}
 
-    <div class="keywords">
-        <strong>Keywords:</strong> 
-        {{ range .Params.keywords }}
-            <span>{{ . }}</span>
-        {{ end }}
-    </div>
-
+    {{ if .Params.keywords }}
+        <div class="keywords">
+            <strong>Keywords:</strong> 
+            {{ range .Params.keywords }}
+                <span>{{ . }}</span>
+            {{ end }}
+        </div>
+    {{end}}
+    <hr>
+    
     <div class="content">
         <!-- Loop through sections -->
         {{ if eq .Params.content "yaml"}}
@@ -46,12 +51,14 @@
     </div>
 
     <!-- Display figures -->
-    <h3>Figures</h3>
-    {{ range .Params.figures }}
-        <figure>
-            <img src="{{ .file }}">
-            <figcaption>{{ .caption }}</figcaption>
-        </figure>
+    {{ if .Params.figures }}
+        <h3>Figures</h3>
+        {{ range .Params.figures }}
+            <figure>
+                <img src="{{ .file }}">
+                <figcaption>{{ .caption }}</figcaption>
+            </figure>
+        {{ end }}
     {{ end }}
 
 </div>

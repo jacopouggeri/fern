@@ -69,6 +69,11 @@ a {
     padding: 6.6rem;   // Adding some padding so content isn't flush against the colored background
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.7);
 
+    hr {
+        margin-top: 2em;
+        margin-bottom: 2em;
+    }
+
     .abstract {
         font-style: italic;
         color: $primary-color;
@@ -162,7 +167,6 @@ $background-color: #ffffff;
         }
     }
 }
-
 
 // Adjustments for smaller screens
 @media screen and (max-width: 768px) {

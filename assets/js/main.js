@@ -22,12 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
-    });
-
-    document.getElementById('toggleColumns').addEventListener('click', function() {
-        const content = document.querySelector('.content');
-        content.classList.toggle('two-columns');
-    });      
+    });   
 
     document.getElementById('darkToggle').addEventListener('click', function() {
         document.body.classList.toggle('dark-mode');
@@ -50,15 +45,33 @@ document.addEventListener('DOMContentLoaded', function() {
             localStorage.removeItem('font');
         }
     });
-    
-    // Check user's preference on page load
-    if (localStorage.getItem('font') === 'dyslexia') {
-        document.body.classList.add('dyslexia-mode');
-    }
+
+    document.getElementById('toggleColumns').addEventListener('click', function() {
+        const content = document.querySelector('.content');
+        content.classList.toggle('two-columns');
+
+        // Optionally, store the user's preference in localStorage for persistence
+        if (content.classList.contains('two-columns')) {
+            localStorage.setItem('column', 'double');
+        } else {
+            localStorage.removeItem('column');
+        }
+    });   
     
     // Check user's preference on page load
     if (localStorage.getItem('theme') === 'dark') {
         document.body.classList.add('dark-mode');
+    }
+
+    // Check user's preference on page load
+    if (localStorage.getItem('font') === 'dyslexia') {
+        document.body.classList.add('dyslexia-mode');
+    }
+
+    // Check user's preference on page load
+    if (localStorage.getItem('column') === 'double') {
+        const content = document.querySelector('.content');
+        content.classList.add('two-columns');
     }
     
     
