@@ -147,7 +147,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 10;
+    z-index: 1000;
 
     &.buttons {
         background-color: $primary-color;
