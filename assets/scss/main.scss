@@ -179,6 +179,10 @@ header {
         width: 90%;  // For smaller screens, content can take up full width
         padding: 5%;
         padding-top: 8rem;
+
+        img {
+            width: 80vw;
+        }
     }
 }
 
