@@ -59,7 +59,7 @@ Recognizing the crucial role of mathematical content in academic works, we're lo
 To ensure a responsive and modern design experience, [SCSS](https://sass-lang.com/) emerges as a potent tool of choice. Its advanced features, like variables and mixins, allow us to craft a consistent and dynamic visual experience, in line with our commitment to making academic publishing both beautiful and functional.
 
 ## Get Involved
-Explore our initial efforts through our [initial prototype](../sample-article/) and [GitHub Repository](https://github.com/jacopouggeri/fern). It's a starting point and there's a lot to refine and develop.
+Explore our initial efforts through our [initial prototype](../sample-article/) and [GitHub repository](https://github.com/jacopouggeri/fern). It's a starting point and there's a lot to refine and develop.
 
 ### Community & Discussion
 Fern isn't meant to be just a tool, but a movement. A push towards redefining how we approach academic publishing in the digital age. Your voice, insights, and expertise are invaluable to this journey. We encourage you to engage in conversations on our [GitHub Discussions](https://github.com/jacopouggeri/fern/discussions).
