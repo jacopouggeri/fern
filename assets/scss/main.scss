@@ -62,7 +62,7 @@ a {
 }
 
 .paper {
-    width: 55%;      // Taking up 80% of the viewport width
+    width: 55vw;      // Taking up 80% of the viewport width
     max-width: 1200px;  // Prevents the content from becoming too wide on large screens
     margin-left: auto;  // Centers the content horizontally
     margin-right: auto;
@@ -165,23 +165,20 @@ header {
             }
         }
 
-        @media (max-width: 768px) {
-            flex-direction: column;
-
-            a {
-                width: 100%;
-                text-align: center;
-                margin: 5px 0;
-            }
-        }
     }
 }
 
 // Adjustments for smaller screens
 @media screen and (max-width: 768px) {
+
+    h1 {
+        font-size: 2rem;
+    }
+
     .paper {
-        width: 100%;  // For smaller screens, content can take up full width
-        padding: 1.5rem;  // Slight padding for very small devices
+        width: 90%;  // For smaller screens, content can take up full width
+        padding: 5%;
+        padding-top: 8rem;
     }
 }
 
