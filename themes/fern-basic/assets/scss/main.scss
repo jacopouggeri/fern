@@ -192,4 +192,11 @@ header {
     }
 }
 
+@media screen and (max-width: 504px) {
+
+    .paper {
+        padding-top: 12rem;
+    }
+}
+
 @import "print";
