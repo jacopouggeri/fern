@@ -54,6 +54,17 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    document.getElementById('garToggle').addEventListener('click', function() {
+        document.body.classList.toggle('garamond-mode');
+        
+        // Optionally, store the user's preference in localStorage for persistence
+        if (document.body.classList.contains('garamond-mode')) {
+            localStorage.setItem('font', 'garamond');
+        } else {
+            localStorage.removeItem('font');
+        }
+    });
+
     document.getElementById('toggleColumns').addEventListener('click', function() {
         const content = document.querySelector('.content');
         content.classList.toggle('two-columns');
@@ -69,6 +80,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Apply styling preferences
     applyUserPreference('theme', 'dark-mode');
     applyUserPreference('font', 'dyslexia-mode');
+    applyUserPreference('font', 'garamond-mode');
     applyUserPreference('column', 'two-columns', document.querySelector('.content'));
 
 
@@ -76,6 +88,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Apply styling preferences on print
         applyUserPreference('theme', 'dark-mode');
         applyUserPreference('font', 'dyslexia-mode');
+        applyUserPreference('font', 'garamond-mode');
         applyUserPreference('column', 'two-columns', document.querySelector('.content'));
     });     
     
