@@ -1,4 +1,10 @@
 {{ define "main" }}
+<header class="buttons">
+    <a id="darkToggle">Dark Mode</a>
+    <a id="dysToggle">Dyslexic Font</a>
+    <a id="toggleColumns">Columns</a>
+    <a onclick="window.print()">Save as PDF</a>
+</header>
 <div class="paper">
     <!-- Display Metadata from Markdown files -->
     <h1>{{ .Title }}</h1>
