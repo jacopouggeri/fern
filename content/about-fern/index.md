@@ -35,41 +35,37 @@ Modern web design has been emphasizing the separation of content and style for y
 Fern aims to combine the rigor and structure of academic content with the dynamic capabilities of modern web technologies. We envision a platform that:
 
 - **Is Responsive**: Adapts to screens of all sizes, ensuring readability, accessibility and aesthetics.
-- **Promotes Accessibility**: Incorporating features like dyslexic-friendly fonts and color schemes for the colorblind, we aim to make content more inclusive and accessible to all readers.
 - **Separates Content from Style**: Allows content creators to focus on the substance, while the platform ensures the presentation is top-notch.
-- **Promotes Dynamic Reading**: Interactive figures, adjustable content presentation, and responsive reading modes tailored to the user's needs.
+- **Allows Dynamic Reading**: Interactive figures, adjustable content presentation, and responsive reading modes tailored to the user's needs.
+- **Promotes Accessibility**: Incorporating features like dyslexic-friendly fonts and color schemes for the colorblind, we aim to make content more inclusive and accessible to all readers.
 
 ### Embracing the Digital Spectrum
 Taking full advantage of digital capabilities means more than just responsive design. It opens the door to integrating various media types directly into the content flow. Video materials, audio recordings, simulations, and file downloads are not just add-ons; they become integral parts of the academic narrative, enhancing comprehension and engagement.
 
 ### The Simplicity and Versatility of Markdown
-Markdown stands out with its lightweight nature and easy-to-understand syntax, making it exceptionally user-friendly. Its simplicity doesn't mean a lack of power. With Markdown, not only can you create well-structured documents effortlessly, but you can also integrate LaTeX for mathematical expressions, marrying the best of both worlds. This blend caters to both novices looking for ease of use and professionals seeking advanced formatting, making it an ideal choice for a wide range of academic content creation.
+Markdown stands out with its lightweight nature and easy-to-understand syntax, making it exceptionally user-friendly. Its simplicity doesn't mean a lack of power. With Markdown, not only can you create well-structured documents effortlessly, but you can also integrate LaTeX for mathematical expressions, marrying the best of both worlds. This blend caters to both novices looking for ease of use and professionals seeking advanced formatting, making it an ideal choice for a wide range of content.
 
 ### Proposed Tools for Fern
 
-In our journey to reshape digital academic publishing with Fern, we're exploring the integration of several leading-edge tools that align with our mission and values:
-Hugo
+In our journey to reshape digital academic publishing with Fern, we're considering the integration of several leading-edge tools that align with our mission:
 
 #### Hugo
 [Hugo](https://gohugo.io/) is a robust static site generator, known for its speed and efficiency. It provides a solid foundation for content management and rapid site deployment, aligning with our vision for swift and seamless academic publishing.
 
 #### MathJax
-Recognizing the significance of mathematical content in academic works, we're looking at the integration of [MathJax](https://www.mathjax.org/). MathJax offers impeccable rendering of mathematical notations, bridging the gap between LaTeX's rigorous standards and the adaptability of the web.
+Recognizing the crucial role of mathematical content in academic works, we're looking at the integration of [MathJax](https://www.mathjax.org/). MathJax offers impeccable rendering of mathematical notations, bridging the gap between LaTeX's rigorous standards and the adaptability of the web. An added bonus is the ability to directly copy an expression in its TeX format.
 
 #### SCSS
-To ensure a responsive and modern design experience, [SCSS](https://sass-lang.com/) is on our radar. This advanced CSS preprocessor, with its suite of features like variables and mixins, offers the flexibility and precision we aim for in Fern's visual language.
+To ensure a responsive and modern design experience, [SCSS](https://sass-lang.com/) emerges as a potent tool of choice. Its advanced features, like variables and mixins, allow us to craft a consistent and dynamic visual experience, in line with our commitment to making academic publishing both beautiful and functional.
 
 ## Get Involved
-[Initial prototype](../sample-article/)
-
-Explore our initial efforts here. It's a starting point and there's a lot to refine and develop.
+Explore our initial efforts here: [initial prototype](../sample-article/). It's a starting point and there's a lot to refine and develop.
 
 ### Community & Discussion
-Fern isn't meant to be just a tool, but a movement. A push towards redefining how we approach academic publishing in the digital age. Your voice, insights, and expertise are invaluable to this journey. Engage in conversations on our GitHub Discussions.
+Fern isn't meant to be just a tool, but a movement. A push towards redefining how we approach academic publishing in the digital age. Your voice, insights, and expertise are invaluable to this journey. We encourage you to engage in conversations on our [GitHub Discussions](https://github.com/jacopouggeri/fern/discussions).
 
 ### Contribution
-The strength of Fern lies in collective collaboration. Whether it's feedback, code, or new ideas, every contribution counts. See our Contribution Guidelines for more.
+We firmly believe that collective collaboration is central to the strength and success of this project. Whether it's through feedback, code contributions, or innovative ideas, every input matters. Please refer to our [Contribution Guidelines](https://github.com/jacopouggeri/fern/discussions/1) for more details.
 
 ## About the Name "Fern"
-
 Ferns, in nature, symbolize growth, renewal, and resilience. These ancient plants have thrived in various environments, constantly adapting to the world around them. In a similar vein, our project "Fern" seeks to usher in a new era for academic publishing. It's about adaptability—taking the best of what has existed and reshaping it for the demands and potentials of the modern digital age. Through "Fern," we aim to intertwine the rich legacy of academic discourse with the innovative capabilities of current technology, creating a system that's both rooted in tradition and flourishing with new possibilities.
