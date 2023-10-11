@@ -16,7 +16,7 @@
     }
 
     header, footer, nav, .no-print {
-        display: none;
+        display: none !important;
     }
 
     .paper {
