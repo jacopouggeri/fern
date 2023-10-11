@@ -64,6 +64,7 @@ a {
 .paper {
     width: 55vw;      // Taking up 80% of the viewport width
     max-width: 1200px;  // Prevents the content from becoming too wide on large screens
+    min-height: 80vh;
     margin-left: auto;  // Centers the content horizontally
     margin-right: auto;
     padding: 6.6rem;   // Adding some padding so content isn't flush against the colored background
