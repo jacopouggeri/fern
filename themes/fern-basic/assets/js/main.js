@@ -43,28 +43,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    document.getElementById('dysToggle').addEventListener('click', function() {
-        document.body.classList.toggle('dyslexia-mode');
-        
-        // Optionally, store the user's preference in localStorage for persistence
-        if (document.body.classList.contains('dyslexia-mode')) {
-            localStorage.setItem('font', 'dyslexia');
-        } else {
-            localStorage.removeItem('font');
-        }
-    });
-
-    document.getElementById('garToggle').addEventListener('click', function() {
-        document.body.classList.toggle('garamond-mode');
-        
-        // Optionally, store the user's preference in localStorage for persistence
-        if (document.body.classList.contains('garamond-mode')) {
-            localStorage.setItem('font', 'garamond');
-        } else {
-            localStorage.removeItem('font');
-        }
-    });
-
     document.getElementById('toggleColumns').addEventListener('click', function() {
         const content = document.querySelector('.content');
         content.classList.toggle('two-columns');
@@ -76,20 +54,46 @@ document.addEventListener('DOMContentLoaded', function() {
             localStorage.removeItem('column');
         }
     });
+
+
+    // Toggle for Arial
+    document.getElementById('arialToggle').addEventListener('click', function() {
+        document.body.style.fontFamily = 'Arial';
+        localStorage.setItem('fontPreference', 'Arial'); // Store the preference
+    });
+
+    // Toggle for Garamond
+    document.getElementById('garToggle').addEventListener('click', function() {
+        document.body.style.fontFamily = 'Garamond';
+        localStorage.setItem('fontPreference', 'Garamond'); // Store the preference
+    });
+
+    // Toggle for Open Dyslexic
+    document.getElementById('dysToggle').addEventListener('click', function() {
+        document.body.style.fontFamily = 'OpenDyslexic';
+        localStorage.setItem('fontPreference', 'OpenDyslexic'); // Store the preference
+    });
     
     // Apply styling preferences
     applyUserPreference('theme', 'dark-mode');
-    applyUserPreference('font', 'dyslexia-mode');
-    applyUserPreference('font', 'garamond-mode');
     applyUserPreference('column', 'two-columns', document.querySelector('.content'));
 
+    // Retrieve and apply font preference when the page loads
+    let fontPreference = localStorage.getItem('fontPreference');
+    if (fontPreference) {
+        document.body.style.fontFamily = fontPreference;
+    }
 
     window.addEventListener('beforeprint', () => {
         // Apply styling preferences on print
         applyUserPreference('theme', 'dark-mode');
-        applyUserPreference('font', 'dyslexia-mode');
-        applyUserPreference('font', 'garamond-mode');
         applyUserPreference('column', 'two-columns', document.querySelector('.content'));
+
+        // Retrieve and apply font preference when the page loads
+        let fontPreference = localStorage.getItem('fontPreference');
+        if (fontPreference) {
+            document.body.style.fontFamily = fontPreference;
+        }
     });     
     
     
