@@ -7,6 +7,9 @@ $text-color: #12222e;
 $accent-color: #3ea39e;
 $background-color: #ffffff;
 
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     font-family: $font-stack;
@@ -174,14 +177,6 @@ header {
     }
 }
 
-/* Fix for id targeting being hidden by the header */
-:target {
-    margin-top: -8rem; /* height of your header */
-    padding-top: 8rem;
-    display: block;
-    position: relative;
-}
-
 // Adjustments for smaller screens
 @media screen and (max-width: 768px) {
 
@@ -208,3 +203,4 @@ header {
 }
 
 @import "print";
+@import "anim";

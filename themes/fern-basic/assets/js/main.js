@@ -6,6 +6,20 @@ function applyUserPreference(key, className, targetElement) {
     }
 }
 
+// Handle hashchange target being blocked by fixed header
+window.addEventListener("hashchange", function() {
+    let remValue = parseFloat(getComputedStyle(document.documentElement).fontSize);
+    let headerOffsetInRem = 8; // header's height in rem units
+    let headerOffset = headerOffsetInRem * remValue;
+    let element = document.getElementById(location.hash.substring(1)); // get the target element
+
+    if (element) {
+        let rect = element.getBoundingClientRect();
+        window.scrollTo(0, rect.top + window.pageYOffset - headerOffset);
+    }
+}, false);
+
+
 document.addEventListener('DOMContentLoaded', function() {
     let authors = document.querySelectorAll('.author');
     let detailsDiv = document.querySelector('.author-details');

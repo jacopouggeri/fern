@@ -1,0 +1,8 @@
+@keyframes pulsingHighlight {
+    0%, 100% { color: currentColor; }
+    50% { color: $accent-color; }
+}
+
+:target {
+    animation: pulsingHighlight .75s ease-in-out infinite;
+}
