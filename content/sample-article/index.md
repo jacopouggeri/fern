@@ -23,7 +23,7 @@ figures:
     file: "figure2.png"
     caption: "A graph showing ABC over time."
 content: "md" # "yaml" or "md", in case of "yaml" content should be stored in section-<title>.yaml, in case of "md" content should be written below.
-citationStyle: "apa"
+citationStyle: "apa" # "apa", "mla"
 ---
 
 ## Introduction
