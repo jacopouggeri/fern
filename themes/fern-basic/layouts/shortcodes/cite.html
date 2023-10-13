@@ -1,0 +1,14 @@
+{{ $key := .Get 0 }}
+{{- with .Page.Resources.GetMatch "refs.yaml" -}}
+    {{ $refs := . | transform.Unmarshal }}
+    {{ $style := $.Page.Params.citationStyle | default "apa" }} <!-- Retrieve the citationStyle from front matter, default to "apa" -->
+    {{- with index $refs $key -}}
+        <!-- Add this reference to the Scratch to track cited references -->
+        {{ $.Page.Scratch.Add "citedRefs" $key }}
+        {{- partial (print "citations/" $style "/intext.html") (dict "data" . "key" $key) -}}
+    {{- else -}}
+        [Citation not found for key: {{ $key }}]
+    {{- end -}}
+{{- else -}}
+    [refs.yaml not found]
+{{- end -}}

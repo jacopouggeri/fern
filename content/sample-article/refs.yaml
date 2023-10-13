@@ -1,0 +1,35 @@
+smith2023:
+  authors:
+    - "John Smith"
+  title: "The Rise of Digital Publishing"
+  journal: "Journal of Modern Publishing"
+  year: 2023
+  volume: 12
+  issue: 4
+  pages: "32-45"
+  publisher: "Elite Publishing House"
+
+doe2022:
+  authors:
+    - "Jane Doe"
+    - "Albert Poe"
+  title: "LaTeX and Modern Tools"
+  journal: "Computing and Writing"
+  year: 2022
+  volume: 15
+  issue: 2
+  pages: "75-89"
+  publisher: "Tech Publishers"
+
+jones2023:
+  authors: 
+    - "Emily Jones"
+    - "Robert Lee"
+    - "Sarah Miller"
+  title: "The Implications of Modern Technology on Research"
+  journal: "Journal of Technological Studies"
+  year: 2023
+  volume: 10
+  issue: 2
+  pages: "120-135"
+  publisher: "Tech Advances Publishing"

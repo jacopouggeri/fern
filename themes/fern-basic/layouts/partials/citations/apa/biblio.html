@@ -1,0 +1,8 @@
+{{ $refData := .data }}
+{{ $key := .key }}
+{{ $authorsList := delimit $refData.authors ", " }}
+
+<p class="citation">
+    <a href="#{{$key}}"><i class="fa-solid fa-arrow-up"></i></a>
+    {{ $authorsList }} ({{ $refData.year }}). {{ $refData.title }}. <em>{{ $refData.journal }}</em>, {{ $refData.volume }}({{ $refData.issue }}), {{ $refData.pages }}.
+</p>

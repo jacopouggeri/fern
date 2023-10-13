@@ -1,0 +1,13 @@
+{{ $refData := .data }}
+{{ $key := .key }}
+{{ $lastName := (index (split (index $refData.authors 0) " ") 0) }}
+
+<span class="intext" id="{{ $key }}">
+{{ if eq (len $refData.authors) 1 }}
+    ({{ $lastName }} {{ with $refData.pages }}{{ . }}{{ else }}{{ with $refData.year }}{{ . }}{{ end }}{{ end }})
+{{ else if eq (len $refData.authors) 2 }}
+    ({{ $lastName }} and {{ index (split (index $refData.authors 1) " ") 0 }} {{ with $refData.pages }}{{ . }}{{ else }}{{ with $refData.year }}{{ . }}{{ end }}{{ end }})
+{{ else }}
+    ({{ $lastName }} et al. {{ with $refData.pages }}{{ . }}{{ else }}{{ with $refData.year }}{{ . }}{{ end }}{{ end }})
+{{ end }}
+</span>

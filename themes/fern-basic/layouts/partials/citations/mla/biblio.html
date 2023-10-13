@@ -1,0 +1,18 @@
+{{ $refData := .data }}
+{{ $key := .key }}
+
+{{- $lastName := (index (split (index $refData.authors 0) " ") 0) -}}
+{{- $firstName := (index (split (index $refData.authors 0) " ") 1) -}}
+
+<p class="citation">
+    <a href="#{{$key}}"><i class="fa-solid fa-arrow-up"></i></a>
+    {{ $lastName }}, {{ $firstName }}
+    {{ range $index, $authorName := after 1 $refData.authors }}
+        {{ if eq $index (sub (len $refData.authors) 1) }}, and{{ else }},{{ end }} {{ $authorName }}
+    {{ end }}. "{{ $refData.title }}"
+    {{ with $refData.journal }}{{ . }},{{ end }}
+    {{ with $refData.volume }}vol. {{ . }},{{ end }}
+    {{ with $refData.issue }}no. {{ . }},{{ end }}
+    {{ with $refData.year }}{{ . }},{{ end }}
+    {{ with $refData.pages }}pp. {{ . }}.{{ end }}
+</p>

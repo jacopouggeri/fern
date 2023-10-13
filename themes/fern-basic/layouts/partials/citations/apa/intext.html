@@ -1,0 +1,10 @@
+{{ $refData := .data }}
+{{ $key := .key }}
+
+<span class="intext" id="{{ $key }}">{{- if eq (len $refData.authors) 1 -}}
+    ({{ index $refData.authors 0 }}, {{ $refData.year }})
+{{- else if eq (len $refData.authors) 2 -}}
+    ({{ index $refData.authors 0 }} & {{ index $refData.authors 1 }}, {{ $refData.year }})
+{{- else -}}
+    ({{ index $refData.authors 0 }} et al., {{ $refData.year }})
+{{- end -}}</span>
