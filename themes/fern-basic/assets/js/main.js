@@ -6,8 +6,7 @@ function applyUserPreference(key, className, targetElement) {
     }
 }
 
-// Handle hashchange target being blocked by fixed header
-window.addEventListener("hashchange", function() {
+function handleHashChange() {
     let remValue = parseFloat(getComputedStyle(document.documentElement).fontSize);
     let headerOffsetInRem = 8; // header's height in rem units
     let headerOffset = headerOffsetInRem * remValue;
@@ -17,8 +16,17 @@ window.addEventListener("hashchange", function() {
         let rect = element.getBoundingClientRect();
         window.scrollTo(0, rect.top + window.pageYOffset - headerOffset);
     }
-}, false);
+}
 
+// Handle hashchange target being blocked by fixed header
+window.addEventListener("hashchange", handleHashChange, false);
+
+// Check if there is a hash in the URL on page load and scroll to the target
+window.addEventListener("load", function () {
+    if (location.hash) {
+        handleHashChange();
+    }
+});
 
 document.addEventListener('DOMContentLoaded', function() {
     let authors = document.querySelectorAll('.author');
