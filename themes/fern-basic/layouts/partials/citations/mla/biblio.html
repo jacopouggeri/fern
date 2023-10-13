@@ -1,9 +1,7 @@
 {{ $refData := .data }}
 {{ $key := .key }}
-
 {{- $lastName := (index (split (index $refData.authors 0) " ") 0) -}}
 {{- $firstName := (index (split (index $refData.authors 0) " ") 1) -}}
-
 <p class="citation">
     <a href="#{{$key}}"><i class="fa-solid fa-arrow-up"></i></a>
     {{ $lastName }}, {{ $firstName }}

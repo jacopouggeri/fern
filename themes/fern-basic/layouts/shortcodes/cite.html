@@ -5,7 +5,9 @@
     {{- with index $refs $key -}}
         <!-- Add this reference to the Scratch to track cited references -->
         {{ $.Page.Scratch.Add "citedRefs" $key }}
-        {{- partial (print "citations/" $style "/intext.html") (dict "data" . "key" $key) -}}
+        {{- $result := partial (print "citations/" $style "/intext.html") (dict "data" . "key" $key) -}}
+        {{- $cleanResult := $result | replaceRE "^\\s+|\\s+$" "" -}}
+        {{- safeHTML $cleanResult -}}
     {{- else -}}
         [Citation not found for key: {{ $key }}]
     {{- end -}}
