@@ -8,7 +8,7 @@ function applyUserPreference(key, className, targetElement) {
 
 function handleHashChange() {
     let remValue = parseFloat(getComputedStyle(document.documentElement).fontSize);
-    let headerOffsetInRem = 12; // header's height in rem units
+    let headerOffsetInRem = 20; // header's height in rem units
     let headerOffset = headerOffsetInRem * remValue;
     let element = document.getElementById(location.hash.substring(1)); // get the target element
 
@@ -22,7 +22,7 @@ function handleHashChange() {
 window.addEventListener("hashchange", handleHashChange, false);
 
 // Check if there is a hash in the URL on page load and scroll to the target
-window.addEventListener("load", function () {
+document.addEventListener('DOMContentLoaded', function() {
     if (location.hash) {
         handleHashChange();
     }

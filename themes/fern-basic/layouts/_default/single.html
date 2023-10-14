@@ -64,20 +64,5 @@
         {{ end }}
     {{ end }}
 
-    {{/* Dynamic citations use the Scratch, which will work only on non cached builds, to get them to work, run hugo server --disableFastRender */}}
-
-    {{ with .Page.Resources.GetMatch "refs.yaml" }}
-        {{ $refs := . | transform.Unmarshal }}
-        {{ $style := $.Page.Params.citationStyle | default "apa" }} <!-- Retrieve the citationStyle from front matter, default to "apa" -->
-        <h3>References</h3>
-        {{ $citedRefs := $.Scratch.Get "citedRefs" }} <!-- Retrieve cited refs from the Scratch -->
-        {{ range $key, $value := $refs }}
-            <!-- Check if this reference has been cited -->
-            {{ if in $citedRefs $key }}
-                {{ partial (printf "citations/%s/biblio.html" $style) (dict "data" $value "key" $key) }}
-            {{ end }}
-        {{ end }}    
-    {{ end }}
-
 </div>
 {{ end }}

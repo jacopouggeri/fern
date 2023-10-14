@@ -5,13 +5,12 @@
     {{ $citedRefs := $.Page.Scratch.Get "citedRefs" }} <!-- Retrieve cited refs from the Scratch -->
     <div class="bibliography">
     <h3>References</h3>
-    {{ $.Scratch.Set "citeNumber" 1 }}
+    {{ print $citedRefs }}
     {{ range $key, $value := $refs }}
         <!-- Check if this reference has been cited -->
         {{ if in $citedRefs $key }}
-            {{ partial (print "citations/" $style "/biblio.html") (dict "data" $value "key" $key "citeNumber" ($.Scratch.Get "citeNumber")) }}
-            {{ $.Scratch.Add "citeNumber" 1 }}
+            {{ partial (printf "citations/%s/biblio.html" $style) (dict "data" $value "key" $key "citeNumber" 1) }}
         {{ end }}
-    {{ end }}     
+    {{ end }}    
     </div>
 {{ end }}

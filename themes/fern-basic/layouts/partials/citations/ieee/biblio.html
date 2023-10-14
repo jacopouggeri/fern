@@ -1,29 +1,15 @@
-{{ $refData := .data }}
-{{ $key := .key }}
-{{ $citedRefs := $.Scratch.Get "citedRefs" }}
-{{ $citeNumber := (index $citedRefs $key)}}
+{{ $authorsListTransformed := "" }}
+{{ range $index, $authorName := .data.authors }}
+    {{ $nameParts := split $authorName " " }}
+    {{ $surname := index $nameParts 0 }}
+    {{ $initial := substr (index $nameParts 1) 0 1 }}
+    {{ if $index }}
+        {{ $authorsListTransformed = print $authorsListTransformed ", " }}
+    {{ end }}
+    {{ $authorsListTransformed = print $authorsListTransformed $surname ", " $initial "." }}
+{{ end }}
+
 <p class="entry">
-    <a href="#{{$key}}">[{{ $citeNumber }}]</a>
-    [{{- range $index, $author := $refData.authors -}}
-        {{- if $index }}, {{ end -}}
-        {{- $lastName := (index (split $author " ") 0) -}}
-        {{- $initials := slice (index (split $author " ") 1) 0 1 }}.
-        {{ $lastName }}, {{ $initials }}
-    {{- end }}], 
-    "{{ $refData.title }}," 
-    {{- with $refData.journal -}}
-        {{ . }},
-    {{- end -}}
-    {{- with $refData.volume -}}
-        vol. {{ . }},
-    {{- end -}}
-    {{- with $refData.issue -}}
-        no. {{ . }},
-    {{- end -}}
-    {{- with $refData.pages -}}
-        pp. {{ . }},
-    {{- end -}}
-    {{- with $refData.year -}}
-        {{ . }}.
-    {{- end -}}
+    <a href="#{{ .key }}">[{{ .citeNumber }}]</a>
+    {{ $authorsListTransformed }}, "{{ .data.title }}," <em>{{ .data.journal }}</em>, vol. {{ .data.volume }}, no. {{ .data.issue }}, pp. {{ .data.pages }}, {{ .data.year }}.
 </p>

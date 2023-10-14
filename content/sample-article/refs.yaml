@@ -1,6 +1,6 @@
 smith2023:
   authors:
-    - "John Smith"
+    - "Smith John"
   title: "The Rise of Digital Publishing"
   journal: "Journal of Modern Publishing"
   year: 2023
@@ -11,8 +11,8 @@ smith2023:
 
 doe2022:
   authors:
-    - "Jane Doe"
-    - "Albert Poe"
+    - "Doe Jane"
+    - "Poe Albert"
   title: "LaTeX and Modern Tools"
   journal: "Computing and Writing"
   year: 2022
@@ -23,9 +23,9 @@ doe2022:
 
 jones2023:
   authors: 
-    - "Emily Jones"
-    - "Robert Lee"
-    - "Sarah Miller"
+    - "Jones Emily"
+    - "Lee Robert"
+    - "Miller Sarah"
   title: "The Implications of Modern Technology on Research"
   journal: "Journal of Technological Studies"
   year: 2023

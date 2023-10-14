@@ -6,3 +6,7 @@
 :target {
     animation: pulsingHighlight .75s ease-in-out infinite;
 }
+
+p:has(> :target) {
+    animation: pulsingHighlight .75s ease-in-out 2s;
+}

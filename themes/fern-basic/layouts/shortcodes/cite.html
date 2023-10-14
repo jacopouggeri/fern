@@ -3,9 +3,14 @@
     {{ $refs := . | transform.Unmarshal }}
     {{ $style := $.Page.Params.citationStyle | default "apa" }} <!-- Retrieve the citationStyle from front matter, default to "apa" -->
     {{- with index $refs $key -}}
+        <!-- Initialize citedRefs if it doesn't exist -->
+        {{ if not ($.Page.Scratch.Get "citedRefs") }}
+            {{ $.Page.Scratch.Set "citedRefs" (slice) }}
+        {{ end }}
         <!-- Add this reference to the Scratch to track cited references -->
         {{ $.Page.Scratch.Add "citedRefs" $key }}
-        {{- $result := partial (print "citations/" $style "/intext.html") (dict "data" . "key" $key) -}}
+        {{ $citeNumber := len ($.Page.Scratch.Get "citedRefs") }}
+        {{- $result := partial (print "citations/" $style "/intext.html") (dict "data" . "key" $key "citeNumber" $citeNumber) -}}
         {{- $cleanResult := $result | replaceRE "^\\s+|\\s+$" "" -}}
         {{- safeHTML $cleanResult -}}
     {{- else -}}
