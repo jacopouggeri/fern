@@ -1,0 +1,5 @@
+{{ $refData := .data }}
+{{ $key := .key }}
+{{ $citedRefs := $.Scratch.Get "citedRefs" }}
+{{ $citeNumber := (index $citedRefs $key) }}
+<span class="intext" id="{{ $key }}">[{{ $citeNumber }}]</span>

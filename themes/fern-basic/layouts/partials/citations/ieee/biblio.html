@@ -1,0 +1,29 @@
+{{ $refData := .data }}
+{{ $key := .key }}
+{{ $citedRefs := $.Scratch.Get "citedRefs" }}
+{{ $citeNumber := (index $citedRefs $key)}}
+<p class="entry">
+    <a href="#{{$key}}">[{{ $citeNumber }}]</a>
+    [{{- range $index, $author := $refData.authors -}}
+        {{- if $index }}, {{ end -}}
+        {{- $lastName := (index (split $author " ") 0) -}}
+        {{- $initials := slice (index (split $author " ") 1) 0 1 }}.
+        {{ $lastName }}, {{ $initials }}
+    {{- end }}], 
+    "{{ $refData.title }}," 
+    {{- with $refData.journal -}}
+        {{ . }},
+    {{- end -}}
+    {{- with $refData.volume -}}
+        vol. {{ . }},
+    {{- end -}}
+    {{- with $refData.issue -}}
+        no. {{ . }},
+    {{- end -}}
+    {{- with $refData.pages -}}
+        pp. {{ . }},
+    {{- end -}}
+    {{- with $refData.year -}}
+        {{ . }}.
+    {{- end -}}
+</p>
