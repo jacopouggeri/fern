@@ -1,12 +1,35 @@
 @keyframes pulsingHighlight {
-    0%, 100% { color: currentColor; }
-    50% { color: $accent-color; }
+    0%, 100% {
+        color: currentColor;
+        transform: scale(1);
+    }
+    50% {
+        color: $accent-color;
+        transform: scale(1.05);
+    }
+}
+
+@keyframes pulsingBackground {
+    0%, 100% {
+        background-color: transparent;
+    }
+    50% {
+        background-color: rgba($accent-color, 0.2);  // A softer, translucent version of the accent color
+    }
 }
 
 :target {
-    animation: pulsingHighlight .75s ease-in-out infinite;
+    animation: pulsingHighlight 0.75s ease-in-out infinite;
+    scroll-margin-top: 8rem;
 }
 
-p:has(> :target) {
-    animation: pulsingHighlight .75s ease-in-out 2s;
+.highlighted {
+    animation: pulsingBackground 2.25s ease-out;
+}
+
+// Adjustments for smaller screens
+@media screen and (max-width: 768px) {
+    :target {
+        scroll-margin-top: 16em;
+    }
 }

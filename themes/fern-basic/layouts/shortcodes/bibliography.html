@@ -3,14 +3,14 @@
     {{ $refs := . | transform.Unmarshal }}
     {{ $style := $.Page.Params.citationStyle | default "apa" }} <!-- Retrieve the citationStyle from front matter, default to "apa" -->
     {{ $citedRefs := $.Page.Scratch.Get "citedRefs" }} <!-- Retrieve cited refs from the Scratch -->
+    {{ $pageContext := $.Page }} <!-- Assign the page context to a variable -->
     <div class="bibliography">
     <h3>References</h3>
-    {{ $.Scratch.Set "citeNumber" 1 }}
-    {{ range $key, $value := $refs }}
-        <!-- Check if this reference has been cited -->
-        {{ if in $citedRefs $key }}
-            {{ partial (print "citations/" $style "/biblio.html") (dict "data" $value "key" $key "citeNumber" ($.Scratch.Get "citeNumber")) }}
-            {{ $.Scratch.Add "citeNumber" 1 }}
+    {{ $pageContext.Scratch.Set "citeNumber" 1 }}
+    {{ range $citedKey := $citedRefs }} <!-- Iterate over $citedRefs -->
+        {{ with index $refs $citedKey }} <!-- Get the value associated with each key from $refs -->
+            {{ partial (print "citations/" $style "/biblio.html") (dict "data" . "key" $citedKey "citeNumber" ($pageContext.Scratch.Get "citeNumber")) }}
+            {{ $pageContext.Scratch.Add "citeNumber" 1 }}
         {{ end }}
     {{ end }}     
     </div>

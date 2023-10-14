@@ -7,19 +7,35 @@ function applyUserPreference(key, className, targetElement) {
 }
 
 function handleHashChange() {
-    let remValue = parseFloat(getComputedStyle(document.documentElement).fontSize);
-    let headerOffsetInRem = 20; // header's height in rem units
-    let headerOffset = headerOffsetInRem * remValue;
-    let element = document.getElementById(location.hash.substring(1)); // get the target element
+    const targetedElement = document.querySelector(window.location.hash);
 
-    if (element) {
-        let rect = element.getBoundingClientRect();
-        window.scrollTo(0, rect.top + window.pageYOffset - headerOffset);
+    if (targetedElement) {
+        // Remove the highlighted class from any previously targeted parent
+        const prevHighlighted = document.querySelector('.highlighted');
+        if (prevHighlighted) {
+            prevHighlighted.classList.remove('highlighted');
+        }
+
+        // Check if the targeted element is a SPAN and highlight its parent
+        if (targetedElement.tagName === 'SPAN') {
+            const parentElement = targetedElement.parentElement;
+            if (parentElement) {
+                // Force a reflow to restart the animation
+                void parentElement.offsetWidth;
+                parentElement.classList.add('highlighted');
+            }
+        }
     }
 }
 
 // Handle hashchange target being blocked by fixed header
-window.addEventListener("hashchange", handleHashChange, false);
+window.addEventListener("hashchange", handleHashChange);
+
+window.onload = function() {
+    if (window.location.hash) {
+        handleHashChange();
+    }
+};
 
 // Check if there is a hash in the URL on page load and scroll to the target
 document.addEventListener('DOMContentLoaded', function() {
