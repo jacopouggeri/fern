@@ -1,0 +1,18 @@
+{{ $figureKey := .Get 0 }}
+{{ $text := .Get 1 }}
+{{ $existingFigures := .Page.Scratch.Get "figures" | default slice }}
+
+{{ $figureKey := .Get 0 }}
+{{ $existingFigures := .Page.Scratch.Get "figures" | default slice }}
+
+{{- if in $existingFigures $figureKey -}}
+    {{ $.Scratch.Set "figNumber" 1 }}
+    {{- range $fig := $existingFigures -}}
+        {{- if eq $fig $figureKey -}}
+            <a href="#{{ $figureKey }}">{{ $text }} {{ $.Scratch.Get "figNumber" }}</a>
+        {{- end -}}
+        {{ $.Scratch.Add "figNumber" 1 }}
+    {{- end -}}
+{{- else -}}
+    <strong>Error: Figure with key '{{ $figureKey }}' not referenced.</strong>
+{{- end -}}

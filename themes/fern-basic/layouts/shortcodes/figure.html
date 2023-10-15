@@ -1,0 +1,16 @@
+{{ $figureKey := .Get 0 }}
+{{ $figures := .Page.Params.figures }}
+{{ if isset $figures $figureKey }}
+    {{ $figData := index $figures $figureKey }}
+    {{ $existingFigures := .Page.Scratch.Get "figures" | default slice }}
+    {{ if not (in $existingFigures $figureKey) }}
+        {{ .Page.Scratch.Add "figures" (slice $figureKey) }}
+    {{ end }}
+    {{ $figNumber := len $existingFigures | add 1 }}
+    <figure id="{{ $figureKey }}">
+        <img src="{{ $figData.file }}" alt="{{ $figData.caption }}">
+        <figcaption class="caption">Figure {{ $figNumber }}: {{ $figData.caption }}</figcaption>
+    </figure>
+{{ else }}
+    <strong>Error: Figure with key '{{ $figureKey }}' not found.</strong>
+{{ end }}

@@ -1,11 +1,11 @@
 @keyframes pulsingHighlight {
     0%, 100% {
         color: currentColor;
-        transform: scale(1);
+        text-shadow: none;
     }
     50% {
         color: $accent-color;
-        transform: scale(1.05);
+        text-shadow: 0 0 0.05rem $accent-color;
     }
 }
 
@@ -18,9 +18,18 @@
     }
 }
 
-:target {
-    animation: pulsingHighlight 0.75s ease-in-out infinite;
+span:target {
+    animation: pulsingHighlight 2s ease-in-out infinite;
     scroll-margin-top: 8rem;
+}
+
+figure:target {
+    animation: pulsingBackground 2.25s ease-out;
+    scroll-margin-top: 8rem;
+
+    .caption {
+        animation: pulsingHighlight 2s ease-in-out infinite;
+    }
 }
 
 .highlighted {
