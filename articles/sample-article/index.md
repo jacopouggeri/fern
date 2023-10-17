@@ -23,7 +23,7 @@ figures:
     file: "figure2.png"
     caption: "A graph showing ABC over time."
 citationStyle: "ieee" # "apa", "mla", "ieee"
-layout: base.njk
+layout: article.njk
 ---
 
 ## Introduction

@@ -1,1 +1,4 @@
 *.DS_Store
+
+# dependencies installed by npm
+node_modules

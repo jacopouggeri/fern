@@ -1,0 +1,37 @@
+{% extends "base.njk" %}
+
+{% block content %}
+    <h1>{{ title }}</h1>
+
+    <div class="authors">
+        {% for author in authors %}
+            <span class="author" 
+                    data-affiliation="{{ author.affiliation }}" 
+                    data-email="{{ author.email }}">
+                <a>{{ author.name }}</a>
+            </span>
+        {% endfor %}
+        <div class="author-details"></div><!-- This div will display hovered author details -->
+    </div>
+
+    <p>{{ date }}</p>
+
+    {% if abstract %}
+        <div class="abstract">
+            <strong>Abstract:</strong> {{ abstract }}
+        </div>
+    {% endif %}
+
+    {% if keywords %}
+        <div class="keywords">
+            <strong>Keywords:</strong> 
+            {% for keyword in keywords %}
+                <span>{{ keyword }}</span>
+            {% endfor %}
+        </div>
+    {% endif %}
+    <hr>
+
+    {{ content | safe }}
+
+{% endblock %}
