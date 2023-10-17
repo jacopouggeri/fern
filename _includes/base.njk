@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include "head.njk" %}
+</head>
+<body>
+    <header>
+        <h1>{{ title }}</h1>
+    </header>
+    <main>
+        {{ content | safe }}
+    </main>
+    <footer>
+        <!-- You can add footer content here, like author info, publication date, etc. -->
+    </footer>
+</body>
+</html>
