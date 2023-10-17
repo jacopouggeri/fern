@@ -1,18 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+    <head>
     <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title></title>
-<script src="https://kit.fontawesome.com/ce761a990f.js" crossorigin="anonymous"></script>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://kit.fontawesome.com/ce761a990f.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+            },
+            startup: {
+                ready: function() {
+                    MathJax.startup.defaultReady();
+                    MathJax.startup.promise.then(function() {
+                    });
+                }
+            }
+        };
+    </script>    
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
     <header>
-        <h1></h1>
+        
     </header>
     <main>
+        <h1></h1>
         <h1>Welcome to My Articles!</h1>
 <ul>
 <li><a href="./sample-article/">Sample Article 1</a></li>
@@ -20,7 +36,7 @@
 
     </main>
     <footer>
-        <!-- You can add footer content here, like author info, publication date, etc. -->
+        
     </footer>
 </body>
 </html>
