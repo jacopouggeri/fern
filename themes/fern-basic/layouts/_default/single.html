@@ -64,6 +64,22 @@
         {{ end }}
     {{ end }}
 
+    <!-- Display figures -->
+    {{ if .Params.objects }}
+        <h3>Objects</h3>
+        {{ range .Params.Objects }}
+            <figure>
+                <div id="object-{{ .id }}"></div>
+                <figcaption>{{ .caption }}</figcaption>
+                <script type="module">
+                    import {data} from './{{ .file }}';
+                    const env = {local: {}, global: {}, element: document.getElementById('object-{{ .id }}')};
+                    interpretate(data, env);
+                </script>
+            </figure>
+        {{ end }}
+    {{ end }}    
+
     {{/* Dynamic citations use the Scratch, which will work only on non cached builds, to get them to work, run hugo server --disableFastRender */}}
 
     {{ with .Page.Resources.GetMatch "refs.yaml" }}

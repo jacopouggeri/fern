@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Fern</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content on Fern</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Fern: Redefining Digital Academic Articles</title>
+      <link>http://localhost:1313/about-fern/</link>
+      <pubDate>Tue, 10 Oct 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/about-fern/</guid>
+      <description>Fern challenges the constraints of traditional academic publishing in a digital age. Moving beyond static formats like PDFs, it champions dynamic, responsive designs that adapt to various screens. Utilizing the simplicity of Markdown, Fern streamlines content creation, enhanced by integrations like LaTeX for complex expressions. The platform also embraces diverse media types, from videos to simulations, enriching academic narratives. With a strong emphasis on accessibility, from dyslexic-friendly fonts to versatile color palettes, Fern is reshaping academic content for the modern era, making it more inclusive, interactive, and impactful.</description>
+    </item>
+    
+    <item>
+      <title>The Effects of XYZ on ABC: A Comprehensive Study</title>
+      <link>http://localhost:1313/sample-article/</link>
+      <pubDate>Thu, 05 Oct 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/sample-article/</guid>
+      <description>Introduction Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. This is an equation: $$R_{\mu \nu} - \frac{1}{2}g_{\mu \nu}R = \frac{8\pi g}{c^4}T_{\mu \nu} $$</description>
+    </item>
+    
+  </channel>
+</rss>
