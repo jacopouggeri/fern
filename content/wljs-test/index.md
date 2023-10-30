@@ -1,6 +1,6 @@
 ---
 
-title: "Interactive figures demo"
+title: "Demonstration of interactive figures with Wolfram Language and Javascript"
 authors:
   - name: "@JerryI"
     affiliation: "University of Augsburg, EKM"
@@ -45,4 +45,4 @@ and substitute as `plot.js` file into a file section in this sample page. On thi
 
 In general, you do not need Wolfram Engine installed, since Javascript core works as a standalone interpreter.
 
-You can find in __Objects__ section the result.
+You can find the result in the __Objects__ section below.
