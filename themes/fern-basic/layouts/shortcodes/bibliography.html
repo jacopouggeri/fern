@@ -1,0 +1,17 @@
+{{/* Dynamic citations use the Scratch, which will work only on non cached builds, to get them to work, run hugo server --disableFastRender */}}
+{{ with .Page.Resources.GetMatch "refs.yaml" }}
+    {{ $refs := . | transform.Unmarshal }}
+    {{ $style := $.Page.Params.citationStyle | default "apa" }} <!-- Retrieve the citationStyle from front matter, default to "apa" -->
+    {{ $citedRefs := $.Page.Scratch.Get "citedRefs" }} <!-- Retrieve cited refs from the Scratch -->
+    {{ $pageContext := $.Page }} <!-- Assign the page context to a variable -->
+    <div class="bibliography">
+    <h3>References</h3>
+    {{ $pageContext.Scratch.Set "citeNumber" 1 }}
+    {{ range $citedKey := $citedRefs }} <!-- Iterate over $citedRefs -->
+        {{ with index $refs $citedKey }} <!-- Get the value associated with each key from $refs -->
+            {{ partial (print "citations/" $style "/biblio.html") (dict "data" . "key" $citedKey "citeNumber" ($pageContext.Scratch.Get "citeNumber")) }}
+            {{ $pageContext.Scratch.Add "citeNumber" 1 }}
+        {{ end }}
+    {{ end }}     
+    </div>
+{{ end }}

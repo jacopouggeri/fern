@@ -1,0 +1,15 @@
+{{ $authorsListTransformed := "" }}
+{{ range $index, $authorName := .data.authors }}
+    {{ $nameParts := split $authorName " " }}
+    {{ $surname := index $nameParts 0 }}
+    {{ $initial := substr (index $nameParts 1) 0 1 }}
+    {{ if $index }}
+        {{ $authorsListTransformed = print $authorsListTransformed ", " }}
+    {{ end }}
+    {{ $authorsListTransformed = print $authorsListTransformed $surname ", " $initial "." }}
+{{ end }}
+
+<p class="entry">
+    <a href="#{{ .key }}">[{{ .citeNumber }}]</a>
+    {{ $authorsListTransformed }}, "{{ .data.title }}," <em>{{ .data.journal }}</em>, vol. {{ .data.volume }}, no. {{ .data.issue }}, pp. {{ .data.pages }}, {{ .data.year }}.
+</p>
