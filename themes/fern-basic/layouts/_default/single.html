@@ -64,5 +64,50 @@
         {{ end }}
     {{ end }}
 
+    <!-- Display figures -->
+    {{ if .Params.objects }}
+        <h3>Objects</h3>
+        {{ range .Params.Objects }}
+            <figure>
+                <div id="object-{{ .id }}"></div>
+                <figcaption>{{ .caption }}</figcaption>
+                <script type="module">
+                    import {data} from './{{ .file }}';
+                    const env = {local: {}, global: {}, element: document.getElementById('object-{{ .id }}')};
+                    interpretate(data, env);
+                </script>
+            </figure>
+        {{ end }}
+    {{ end }}    
+
+    <!-- Display figures -->
+    {{ if .Params.objects }}
+        <h3>Objects</h3>
+        {{ range .Params.Objects }}
+            <figure>
+                <div id="object-{{ .id }}"></div>
+                <figcaption>{{ .caption }}</figcaption>
+                <script type="module">
+                    import {data} from './{{ .file }}';
+                    const env = {local: {}, global: {}, element: document.getElementById('object-{{ .id }}')};
+                    interpretate(data, env);
+                </script>
+            </figure>
+        {{ end }}
+    {{ end }}    
+
+    {{ with .Page.Resources.GetMatch "refs.yaml" }}
+        {{ $refs := . | transform.Unmarshal }}
+        {{ $style := $.Page.Params.citationStyle | default "apa" }} <!-- Retrieve the citationStyle from front matter, default to "apa" -->
+        <h3>References</h3>
+        {{ $citedRefs := $.Scratch.Get "citedRefs" }} <!-- Retrieve cited refs from the Scratch -->
+        {{ range $key, $value := $refs }}
+            <!-- Check if this reference has been cited -->
+            {{ if in $citedRefs $key }}
+                {{ partial (printf "citations/%s/biblio.html" $style) (dict "data" $value "key" $key) }}
+            {{ end }}
+        {{ end }}    
+    {{ end }}
+
 </div>
 {{ end }}
